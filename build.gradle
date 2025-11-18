@@ -15,7 +15,7 @@ sourceSets.main.resources.srcDirs += "src/main/generated"
 
 group = 'wootrevived'
 def buildVersion = "${mod_version}"
-version = "${mc_version}-${buildVersion}"
+version = "${buildVersion}"
 
 base {
     archivesName = "ifwootaddon"
