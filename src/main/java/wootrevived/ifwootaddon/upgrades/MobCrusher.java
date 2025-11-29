@@ -7,18 +7,22 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 import wootrevived.api.WootUpgradeItem;
+import wootrevived.api.enums.UpgradeNoVariant;
 import wootrevived.api.interfaces.WootDropsProperties;
 import wootrevived.api.registrations.WootUpgradeItemRegistration;
 import wootrevived.ifwootaddon.IFWootAddon;
 
 import java.util.List;
 
-public class MobCrusher extends WootUpgradeItem {
-    public MobCrusher(int level) { super(new Properties(), level); }
+public class MobCrusher extends WootUpgradeItem<UpgradeNoVariant> {
+    public MobCrusher() {
+        super(new Properties(), UpgradeNoVariant.NONE);
+    }
 
     @Override
-    public void modifyDrops(WootDropsProperties properties, CompoundTag upgradeTag) {
+    public void modifyDrops(@NotNull WootDropsProperties properties, @NotNull CompoundTag itemTag) {
         int experience = properties.getExperience() * 20;
         if(experience <= 0)
             return;
@@ -38,5 +42,5 @@ public class MobCrusher extends WootUpgradeItem {
     }
 
     public static final String MOB_CRUSHER_TAG = "mob_crusher_upgrade";
-    public static final RegistryObject<MobCrusher> MOB_CRUSHER_ITEM = ITEMS.register(MOB_CRUSHER_TAG, () -> new MobCrusher(1));
+    public static final RegistryObject<MobCrusher> MOB_CRUSHER_ITEM = ITEMS.register(MOB_CRUSHER_TAG, MobCrusher::new);
 }

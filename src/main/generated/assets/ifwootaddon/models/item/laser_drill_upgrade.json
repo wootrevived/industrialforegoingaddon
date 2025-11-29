@@ -1,6 +1,4 @@
 {
   "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ifwootaddon:item/laser_drill_upgrade"
-  }
+  "loader": "woot_revived:upgrade_item"
 }

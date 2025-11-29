@@ -9,18 +9,22 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 import wootrevived.api.WootUpgradeItem;
+import wootrevived.api.enums.UpgradeNoVariant;
 import wootrevived.api.interfaces.WootDropsProperties;
 import wootrevived.api.registrations.WootUpgradeItemRegistration;
 import wootrevived.ifwootaddon.IFWootAddon;
 
 import java.util.List;
 
-public class MobSlaughterFactory extends WootUpgradeItem {
-    public MobSlaughterFactory(int level) { super(new Properties(), level); }
+public class MobSlaughterFactory extends WootUpgradeItem<UpgradeNoVariant> {
+    public MobSlaughterFactory() {
+        super(new Properties(), UpgradeNoVariant.NONE);
+    }
 
     @Override
-    public void modifyDrops(WootDropsProperties properties, CompoundTag upgradeTag) {
+    public void modifyDrops(@NotNull WootDropsProperties properties, @NotNull CompoundTag itemTag) {
         List<FluidStack> fluids = properties.getFluidDrops();
 
         LivingEntity entity = properties.getEntity();
@@ -42,5 +46,5 @@ public class MobSlaughterFactory extends WootUpgradeItem {
     }
 
     public static final String MOB_SLAUGHTER_FACTORY_TAG = "mob_slaughter_factory_upgrade";
-    public static final RegistryObject<MobSlaughterFactory> MOB_SLAUGHTER_FACTORY_ITEM = ITEMS.register(MOB_SLAUGHTER_FACTORY_TAG, () -> new MobSlaughterFactory(1));
+    public static final RegistryObject<MobSlaughterFactory> MOB_SLAUGHTER_FACTORY_ITEM = ITEMS.register(MOB_SLAUGHTER_FACTORY_TAG, MobSlaughterFactory::new);
 }

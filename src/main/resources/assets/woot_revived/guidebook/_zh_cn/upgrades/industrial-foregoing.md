@@ -17,7 +17,7 @@ navigation:
 
 ## <ItemImage id="ifwootaddon:laser_drill_upgrade" scale="0.5" /> 镭射钻升级
 
-输出每种生物相关的流体配方产物。
+将升级放入对应槽位后，用任意兼容的透镜右键该槽位，使该升级产出该透镜能够生成的全部流体。
 
 ## <ItemImage id="ifwootaddon:mob_crusher_upgrade" scale="0.5" /> 生物粉碎机升级
 

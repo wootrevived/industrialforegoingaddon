@@ -17,7 +17,7 @@ The upgrades from the addon for Industrial Foregoing
 
 ## <ItemImage id="ifwootaddon:laser_drill_upgrade" scale="0.5" /> Laser Drill Upgrade
 
-Output every mob fluid related recipe.
+Apply the upgrade to the slot, then right-click the slot with a lens to make the upgrade produce all fluids that lens can generate.
 
 ## <ItemImage id="ifwootaddon:mob_crusher_upgrade" scale="0.5" /> Mob Crusher Upgrade
 
