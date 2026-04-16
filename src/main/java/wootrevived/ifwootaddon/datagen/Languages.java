@@ -6,6 +6,7 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import wootrevived.ifwootaddon.datagen.languages.English;
+import wootrevived.ifwootaddon.datagen.languages.Japanese;
 import wootrevived.ifwootaddon.datagen.languages.SimplifiedChinese;
 
 import java.util.ArrayList;
@@ -18,7 +19,8 @@ public class Languages implements DataProvider {
     public Languages(PackOutput packOutput) {
         languages = List.of(
                 new English(packOutput),
-                new SimplifiedChinese(packOutput)
+                new SimplifiedChinese(packOutput),
+                new Japanese(packOutput)
         );
     }
 
